@@ -1,6 +1,7 @@
 # Exercise 1: Building a user interface
 
 # Load the `shiny` package (install it in the R terminal if you haven't already)
+install.packages("shiny")
 library(shiny)
 
 # Define a new `ui` variable. This variable should be assigned a `fluidPage()` 
