@@ -8,8 +8,8 @@ server <- function(input, output){
 # Save the result of `renderPlot` to output$scatter
   output$scatter <- renderPlot({
     # Store x and y values to plot
-    x <- input$x_var
-    y <- input$y_var
+    x <- mpg[[input$x_var]]
+    y <- mpg[[input$y_var]]
     # Store the title of the graph in a variable
     title <- "MPG Plot"
     size <- input$point_size
@@ -18,7 +18,7 @@ server <- function(input, output){
     # Create ggplot scatter
     p <- ggplot(mpg) +
       geom_point(mapping = aes(x = x, y = y), color = color, size = size) +
-      title(title, xlab = x, ylab = y)
+      title(title, xlab = x, ylab = input$y_var)
     p
   })
 }

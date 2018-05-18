@@ -31,7 +31,7 @@ ui <- fluidPage(
   
   # The word "Cost", strongly bolded
 
-  
+
   # A `textOutput()` output of a calculated value labeled `cost`
 
 

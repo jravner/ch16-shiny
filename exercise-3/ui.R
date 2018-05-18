@@ -9,7 +9,8 @@ select_values <- colnames(mpg)
 ui <- fluidPage(
   # A page header
   titlePanel("MPG PLOTS"),
-  
+sidebarLayout(  
+  sidebarPanel(
   # Add a select input for the x variable
   selectInput("x_var", "X-axis", select_values),
   
@@ -20,10 +21,10 @@ ui <- fluidPage(
   sliderInput("point_size", "Point Size", 1, 10, 1),
 
   # Add a selectInput that allows you to select a color from a list of choices
-  selectInput("color", "Color", c("red", "blue", "green", "purple", "yellow")),
+  selectInput("color", "Color", c("red", "blue", "green", "purple", "yellow"))),
 
   # Plot the output with the name "scatter"
-  plotOutput("scatter")
-)
+  mainPanel(plotOutput("scatter"))
+))
 
 shinyUI(ui)
